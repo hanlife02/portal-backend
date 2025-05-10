@@ -1,0 +1,16 @@
+[
+  {
+    "id": "lobechat",
+    "name": "LobeChat",
+    "description": "LobeChat AI聊天服务",
+    "url": "https://lobe.ethan02.com",
+    "icon": "chat-icon"
+  },
+  {
+    "id": "newapi",
+    "name": "NewAPI",
+    "description": "NewAPI服务",
+    "url": "https://api.ethan02.com",
+    "icon": "api-icon"
+  }
+]
