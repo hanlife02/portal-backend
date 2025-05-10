@@ -4,6 +4,7 @@ const helmet = require("helmet");
 const config = require("./config");
 const authRoutes = require("./routes/authRoutes");
 const portalRoutes = require("./routes/portalRoutes");
+const frontendCallbackRoutes = require("./routes/frontendCallbackRoutes");
 const portalService = require("./services/portalService");
 
 // Initialize the Express application
@@ -11,12 +12,13 @@ const app = express();
 
 // Apply middleware
 app.use(helmet()); // Security headers
-// Configure CORS to allow requests from any origin during development
+// Configure CORS to allow requests from frontend domains
 app.use(
   cors({
-    origin: "*", // In production, you should specify your frontend domain
+    origin: ["http://localhost:3000", "http://localhost:8654"], // Add your frontend domains here
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, // Allow cookies if needed
   })
 );
 app.use(express.json()); // Parse JSON request bodies
@@ -30,6 +32,7 @@ portalService.initializeServicesFile().catch((error) => {
 // Define routes
 app.use("/api/auth", authRoutes);
 app.use("/api/portal", portalRoutes);
+app.use("/api/frontend-auth", frontendCallbackRoutes);
 
 // Root route
 app.get("/", (req, res) => {
