@@ -21,6 +21,13 @@ const DEFAULT_SERVICES = [
     url: config.services.newApi,
     icon: "api-icon",
   },
+  {
+    id: "treehole",
+    name: "TreeHole",
+    description: "TreeHole 树洞服务",
+    url: "https://treehole.example.com",
+    icon: "treehole.png",
+  },
 ];
 
 // Ensure the data directory exists

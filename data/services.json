@@ -12,5 +12,12 @@
     "description": "NewAPI服务",
     "url": "https://api.ethan02.com",
     "icon": "api-icon"
+  },
+  {
+    "id": "treehole",
+    "name": "Ethan hole",
+    "description": "我什么都没说",
+    "url": "https://hole.ethan02.com",
+    "icon": "treehole.png"
   }
 ]
